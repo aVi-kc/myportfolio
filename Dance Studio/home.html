@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dance Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="./images/logo-removebg.png" alt="Logo" class="logo">
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#calendar">Calendar</a></li>
+                <li><a href="#class">Class</a></li>
+                <li><a href="#instructor">Instructor</a></li>
+                <li><a href="#dance">Dance Club</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact Us</a></li>         
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h1>Welcome to Dance Studio</h1>
+            <p style="color: white;">Discover Dance Journey with Us</p> 
+            <figure class="figure">
+                <img src="images/img3.jpeg" alt="Dance image">
+
+            </figure>
+
+        </section>
+
+        <section id="calendar">
+            <h1>Our Classes</h1>
+            <caption>Class Details</caption>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Class</th>
+                        <th>Instructor</th>
+                    </tr>
+                </thead>
+                <tbody style="color: white;">
+                    <tr>
+                        <td>Monday</td>
+                        <td>6:00 PM - 7:00 PM</td>
+                        <td>Salsa for Beginners</td>
+                        <td>Ram</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>7:00 PM - 8:00 PM</td>
+                        <td>Advanced Hip-Hop</td>
+                        <td>Shyam</td>
+                    </tr>
+                    <tr>
+                        <td>20th Aug</td>
+                        <td>4:00 PM - 5:00 PM</td>
+                        <td>Salsa Class Start</td>
+                        <td>John</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="class">
+            <h1>Our Classes</h1>
+            <div class="class-details">
+                <h2>Salsa for Beginners</h2>
+                <p>Instructor: Ram</p>
+                <p>Skill Level: Beginner</p>
+                <p>Duration: 1 hour</p>
+                <p>Day and Time: Monday, 6:00 PM - 7:00 PM</p>
+              
+            </div>
+            <div class="class-details">
+                <h2>Hiphop for Beginners</h2>
+                <p>Instructor: William</p>
+                <p>Skill Level: Beginner</p>
+                <p>Duration: 1 hour</p>
+                <p>Day and Time: Tuesday, 6:00 PM - 7:00 PM</p>
+            </div>
+        </section>
+
+        <section id="instructor">
+            <h1>Our Instructors</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Dance Type</th>
+                        <th>Available Day</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody style="color: white;">
+                    <tr>
+                        <td>Lax</td>
+                        <td>Advanced Hip-Hop</td>
+                        <td>Monday</td>
+                        <td>8:00 PM - 9:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Seth</td>
+                        <td>Salsa</td>
+                        <td>Wednesday</td>
+                        <td>8:00 PM - 9:00 PM</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="dance">
+            <h1>Dance Club</h1>
+            <div class="class-details">
+                <h2>Dashing Hip-Hop</h2>
+                <p>Dance Type: Advanced Hip-Hop</p>
+                <p>Club Leader: William</p>
+                <p>Day and Time: Friday, 8:00 PM - 9:00 PM</p>
+                <label for="Email">Email:</label><br>
+                <input type="email" id="email" placeholder="Join us through your email"><br> <br>
+
+                <button onclick="joinClub()">Join Us</button>
+                <script>
+                    function joinClub() {
+                        var email = document.getElementById('email').value;
+                        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        
+                        if (email.trim() === "") {
+                            alert('Please enter your email address.');
+                        } else if (!emailPattern.test(email)) {
+                            alert('Please enter a valid email address.');
+                        } else {
+                            alert('Thank you for joining us!');
+                            setTimeout(function() {
+                                window.location.href = './home.html'; // Adjust to your homepage path
+                            }, 1000);
+                        }
+                    }
+                </script>
+            </div>
+        </section>
+
+        <section id="about">
+            <h1>About Us</h1>
+            <p>We are Dance Fusion Studio</p>
+            <p>Dance Studio is where passion meets precision. We provide top-notch dance education in a vibrant and supportive environment. Our mission is to help dancers of all levels improve their technique and enjoy the art of dance.</p>
+            <p>Founded in 2024, Dance Studio has quickly become a hub for dancers in the community. Whether you're a beginner or an experienced dancer, we have something for you.</p>
+        </section>
+
+        <section id="contact">
+            <h1>Contact Us</h1>
+            <form id="contact-form" >
+                <label for="name">Name:</label><br>
+                <input type="text" name="name" id="name"><br>
+                <label for="email">Email:</label><br>
+                <input type="email" name="email" id="email"><br>
+                <label for="message">Message:</label><br>
+                <textarea name="message" id="message"></textarea><br>
+
+                <button type="submit">Submit</button>
+            </form>
+            <script>
+                document.getElementById('contact-form').addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent the form from submitting the traditional way
+            
+                    // Get form values and trim whitespace
+                    var name = document.getElementById('name').value.trim();
+                    var email = document.getElementById('email').value.trim();
+                    var message = document.getElementById('message').value.trim();
+            
+            
+                    // Basic validation       
+                
+                    if (email.trim() === "" || name.trim()=== "" || message.trim()==="") {
+                            alert('Please fill all the fields.');
+                        }
+                    //  else {
+                    //         alert('Thank you for joining us!');
+                    //         setTimeout(function() {
+                    //             window.location.href = './home.html'; // Adjust to your homepage path
+                    //         }, 1000);
+                    //     }
+                    // Show alert and redirect
+                    alert('We received your message!');
+                    setTimeout(function() {
+                        window.location.href = './home.html'; // Adjust to your homepage path
+                    }, 1000); // 1-second delay
+                });
+            </script>
+            
+            
+           
+       </section>
+
+    </main>
+
+    <footer>
+        <p>O'Connel Street, Sydney, 2000</p>
+        <p>Copyright &copy; Dance Fusion Studio | 2024</p>
+    </footer>
+</body>
+</html>
