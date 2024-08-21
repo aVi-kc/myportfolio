@@ -33,7 +33,7 @@
     "lint": "standard",
     "test": "npm run lint && npm run unit",
     "unit": "mocha test",
-    "build": "your build command here"
+    "build": "npm run build"
   }
   
 }
